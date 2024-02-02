@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+    {% block title %} <title>Works</title> {% endblock title %}
+
+{% block content %}
+
+        <div class="main">
+            <div class="blog">
+                <h1>Work</h1>
+            </div>
+            {% for work in object_list %}
+            <div class="blogs">
+                <div class="blogs-ins">
+                    <div>
+                        <img class="header-image-in" src="{{ work.myImage.url }}" alt="ME"/>
+                    </div>
+                    <div>
+                        <h1 class="title">{{ work.title | safe }}</h1>
+                        <div class="flextech">
+                            <h2>{{ work.time | safe}}</h2>
+                            <div class="line"></div>
+                            <h3>{{ work.dashboard | safe}}</h3>
+                        </div>
+                        <p class="text">
+                            {{ work.description | safe }}
+                        </p>
+                    </div>
+                </div>
+                <div class="lines"></div>
+            </div>
+            {% endfor %}
+        </div>
+{% endblock content %}

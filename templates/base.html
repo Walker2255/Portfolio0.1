@@ -1,0 +1,65 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %} {% endblock title %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}"/>
+</head>
+<body>
+<header>
+<div class="container">
+    <div class="navbar">
+        <div class="logo">
+            <a href="{% url 'home' %}">Walker's blog</a>
+        </div>
+        <div class="nav">
+            <ul class="ul">
+                <li>
+                    <a href="{% url 'works' %}">Works</a>
+                </li>
+                <li>
+                    <a href="{% url 'blog' %}">Blog</a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://t.me/WalkingDeveloper">Channel</a>
+                </li>
+            </ul>
+              <div class="hamburger">
+                <div class="lineOne"></div>
+                <div class="lineTwo"></div>
+              <div class="lineThree"></div>
+        </div>
+        </div>
+
+    </div>
+    {% block content %}
+
+    {% endblock content %}
+
+    <div class="footer-wrap">
+        <div class="socialMedia">
+            <a href="#">
+                <img src="{% static 'icons/fb.png' %}" alt="Github"/>
+            </a>
+            <a href="#">
+                <img src="{% static 'icons/insta.png' %}" alt="Instagram"/>
+            </a>
+            <a href="#">
+                <img src="{% static 'icons/twit.png' %}" alt="Twitter"/>
+            </a>
+            <a href="#">
+                <img src="{% static 'icons/Linkedin.png' %}" alt="Linkedin"/>
+            </a>
+        </div>
+        <h1>
+            <span id="year"></span>
+            Walkers.com
+        </h1>
+    </div>
+</div>
+</header>
+<script src="{% static 'js/apps.js' %}"></script>
+</body>
+</html>

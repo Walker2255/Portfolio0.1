@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block title %} <title>Walker's blog</title> {% endblock title %}
+
+
+{% block content %}
+
+
+
+    <div class="container">
+        {% for mainpage in object_list %}
+        <div class="header-content">
+            <div class="header-text">
+                <h1>{{ mainpage.title  | safe}}</h1>
+                <p>
+                    {{ mainpage.description | safe }}
+                </p>
+                <a href="{% url 'about' %}">
+                <button id="about">About me</button>
+                </a>
+            </div>
+            <div class="header-image">
+                <img class="header-image-in" src="{{ mainpage.myImage.url }}" alt="ME"/>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+
+{% endblock content %}

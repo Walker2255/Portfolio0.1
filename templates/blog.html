@@ -1,0 +1,29 @@
+
+{% extends 'base.html' %}
+
+    {% block title %} <title>Blog</title> {% endblock title %}
+
+
+{% block content %}
+
+        <div class="main">
+            <div class="blog">
+                <h1>Blog</h1>
+            </div>
+            {% for blog in object_list %}
+            <div class="blogs">
+                <h1 class="title">{{ blog.title | safe}}</h1>
+                <div class="flextech">
+                    <h2>{{ blog.time | safe}}</h2>
+                    <div class="line"></div>
+                    <h3>{{ blog.where |safe}}</h3>
+                </div>
+                <p class="text">
+                    {{ blog.description |safe }}
+                </p>
+                <div class="lines"></div>
+            </div>
+            {% endfor %}
+        </div>
+
+{% endblock content %}
